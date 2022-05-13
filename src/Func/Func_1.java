@@ -2,8 +2,7 @@ package Func;
 
 
 public class Func_1 {
-	
-	public long test(int[] a) {
+	public long sum(int[] a) {
 		
 		long sum = 0;
 		
