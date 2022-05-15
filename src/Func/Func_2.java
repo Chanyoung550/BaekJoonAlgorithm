@@ -24,14 +24,14 @@ public class Func_2 {
  
 		boolean[] check = new boolean[10001];
  
-		for (int i = 1; i <= 10000; i++){
+		for (int i = 1; i < 10001; i++){
 			int n = d(i);
 		
-			if(n <= 10000){
+			if(n < 10001){
 				check[n] = true;
 			}
 		}
-		for (int i = 1; i <= 10000; i++) {
+		for (int i = 1; i < 10001; i++) {
 			if (!check[i]) {
 				System.out.println(i);
 			}
