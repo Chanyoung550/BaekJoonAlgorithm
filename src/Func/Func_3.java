@@ -14,13 +14,10 @@ package Func;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Func_3 {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws NumberFormatException, IOException{
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -31,56 +28,29 @@ public class Func_3 {
 	}
 	
 	public static void sequence(int n) {
+		int cnt = 0;
 		
-		int count = 0;
-		
-		int idx = 1;
-		
-		while(idx <= n) {
-			if(idx < 100) {
-				count++;
-			}
-			else {
-				int[] intArr = d(idx);
+		if(n < 100) {
+			
+			System.out.println(n);
+			
+		}
+		else {
+			cnt = 99;
+			
+			for(int i = 100; i <= n; i++) {
+				int hund = i / 100;
+				int ten = (i / 10) % 10;
+				int one = i % 10;
 				
-				int arrSize = intArr.length;
-				
-				int[] intArr2 = new int[arrSize-1];
-				
-				
-				for(int i = arrSize-1; i >= 0; i--) {
-					if(i <= 0) {
-						intArr2[i] = intArr[i]-intArr[i-1];
-					}
-					System.out.println(intArr2[i]);
+				if((hund-ten)==(ten-one)) {
+					cnt++;
 				}
 			}
-			idx++;
+			System.out.println(cnt);
+			
 		}
 		
-	}
-	
-	public static int[] d(int n){
-
-		int nSize = Integer.toString(n).length();
-		
-		int[] intArr = new int[nSize];
-		
-		int idx = 0;
-		
-		while(n != 0) {
-			
-			int arrCol = n % 10;
-			
-			n = n/10;
-			
-			intArr[idx] = arrCol;
-			
-			System.out.println(arrCol);
-			
-			idx++;
-		}
-		return intArr;
 	}
 
 }
