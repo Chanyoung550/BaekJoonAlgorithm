@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class test_2 {
+public class test_3 {
 	
-
-	public static void main(String[] args) throws IOException {
-		
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(reader.readLine());
@@ -31,22 +29,21 @@ public class test_2 {
 			
 			int j = i;
 			
-			while(bol) {
+			while(bol && j < n) {
 				
-				if(intArr[i]<intArr[j]) {
+				if(intArr[i] < intArr[j]) {
 					intArr2[i] = intArr[j];
 					bol = false;
 					
-					j++;
 				}
 				else if(j >= n) {
 					intArr2[i] = -1;
 					bol = false;
 				}
+				j++;
 			}
 			if(intArr2[i]==0) {
 				intArr2[i] = -1;
-				j++;
 			}
 		}
 		for(int i = 0; i < n; i++) {
