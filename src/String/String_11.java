@@ -33,12 +33,14 @@ public class String_11 {
 		String[] strArr = new String[n];
 		
 		for(int i = 0; i < n; i++) {
-			strArr[i] = reader.readLine();
+			
+			String str = reader.readLine();
+			
+			for(int j = 0; j < str.length(); j++) {
+				
+			}
 		}
 		
-		for(int i = 0; i < n; i++) {
-			System.out.println(strArr[i]);
-		}
 		
 	}
 	
